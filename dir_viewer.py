@@ -1,24 +1,7 @@
-# import os
-#
-# sPath = '.'
-#
-#
-# def print_directory_contents(sPath):
-#     for sChild in os.listdir(sPath):
-#         sChildPath = os.path.join(sPath, sChild)
-#         if os.path.isdir(sChildPath):
-#             print_directory_contents(sChildPath)
-#         else:
-#             print(sChildPath)
-#
-# if __name__ == '__main__':
-#     print_directory_contents(sPath)
-
-
-
 import os
 
-def getFiles(path="/var/log", files=[]):
+
+def getFiles(path=".", files=[]):
     if os.path.isfile(path):
         return files.append(path)
     for item in os.listdir(path):
@@ -30,6 +13,10 @@ def getFiles(path="/var/log", files=[]):
     return files
 
 
+def searcher(search="."):
+    for f in getFiles(search):
+        print(f)
 
-for f in getFiles(".", []):
-    print(f)
+
+if __name__ == '__main__':
+    searcher()
