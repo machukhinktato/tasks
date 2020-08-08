@@ -1,7 +1,11 @@
 import os
 
 
-def getFiles(path=".", files=[]):
+def scanner(path=".", files=[]):
+    """The function takes a directory name and prints out its contents
+    in the form of "path and file name", as well as any other
+    files in subdirectories."""
+
     if os.path.isfile(path):
         return files.append(path)
     for item in os.listdir(path):
@@ -9,14 +13,14 @@ def getFiles(path=".", files=[]):
         if os.path.isfile(item):
             files.append(item)
         else:
-            files = getFiles(item, files)
+            files = scanner(item, files)
     return files
 
 
-def searcher(search="."):
-    for f in getFiles(search):
+def dir_viewer(search="."):
+    for f in scanner(search):
         print(f)
 
 
 if __name__ == '__main__':
-    searcher()
+    dir_viewer("../fibanacci")
