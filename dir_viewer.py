@@ -23,4 +23,4 @@ def dir_viewer(search="."):
 
 
 if __name__ == '__main__':
-    dir_viewer("../fibanacci")
+    dir_viewer("..")
