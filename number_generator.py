@@ -2,6 +2,7 @@ import random
 
 
 def random_nums_generator(lesser_value, greater_value):
+    """ handmade number generator"""
     if lesser_value > greater_value:
         lesser_value, greater_value = greater_value, lesser_value
     random_numeric_list, random_numeric_dict, counter = [], {}, 1
