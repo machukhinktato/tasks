@@ -22,5 +22,22 @@ def dir_viewer(search="."):
         print(f)
 
 
+def get_directory_contents(path):
+    """alternative option"""
+
+    def get_directory_files(path):
+        struct = []
+        for file_or_directory in os.listdir(path):
+            full_name = os.path.join(os.path.abspath(path), file_or_directory)
+            if os.path.isfile(full_name):
+                struct.append((os.path.abspath(path), file_or_directory))
+            else:
+                struct.extend(get_directory_files(full_name))
+        return struct
+
+    return get_directory_files(path)
+
+
 if __name__ == '__main__':
-    dir_viewer("..")
+    # dir_viewer("..")
+    print(get_directory_contents('.'))
