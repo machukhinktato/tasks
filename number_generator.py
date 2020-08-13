@@ -18,5 +18,22 @@ def random_nums_generator(lesser_value, greater_value):
     print(random_numeric_dict)
 
 
+def gen_func(start, finish):
+    """alternative version"""
+    new_lst = []
+    new_dict = {}
+    for _ in range(10):
+        print(finish - start)
+        print(random.random())
+        print(start)
+        rnd = int((finish - start) * random.random() + start)
+        print(rnd)
+        new_lst.append(rnd)
+        new_dict.update({f'elem_{rnd}': rnd})
+
+    return new_lst, new_dict
+
+
 if __name__ == '__main__':
-    random_nums_generator(10, 1)
+    # random_nums_generator(10, 1)
+    print(gen_func(7, 26))
