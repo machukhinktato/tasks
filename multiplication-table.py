@@ -18,5 +18,20 @@ def multiplication_builder(x, y):
         print('')
 
 
+def multiplication_table(length, height):
+    """ alternative version """
+    for i in range(length + 1):
+        row = []
+        for j in range(height + 1):
+            if i == 0:
+                row.append(j)
+            elif j == 0:
+                row.append(i)
+            else:
+                row.append(i * j)
+        print('\t'.join([str(i) for i in row]))
+
+
 if __name__ == '__main__':
-    multiplication_former()
+    # multiplication_former()
+    multiplication_table(10, 10)
