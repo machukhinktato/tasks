@@ -21,7 +21,9 @@ if __name__ == '__main__':
     try:
         print(slot_1.get_parent_data())
     except:
-        print('сгенерирована ошибка выполнения')
+        print("AttributeError: 'ItemDiscountReport' object"
+              " has no attribute '_ItemDiscountReport__name'")
+    # print(slot_1.get_parent_data())
     # slot_2 = ItemDiscount('"Garmin 985"', 36306)
     # print(slot_2._ItemDiscount__name, slot_2._ItemDiscount__price)
     # print(slot_2.__name, slot_2.__price)
