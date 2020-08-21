@@ -8,7 +8,13 @@ def type_checker(testing):
     elif value.isalpha():
         return value
     else:
-        return float(value)
+        a,b = value.split('.')
+        if a > b:
+            return 'a > b'
+        elif a < b:
+            return 'a < b'
+        else:
+            return 'a = b'
 
 
 if __name__ == '__main__':
