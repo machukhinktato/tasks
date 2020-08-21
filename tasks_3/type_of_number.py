@@ -1,4 +1,5 @@
 def type_checker():
+    """program to check which type of number provided and return info about it"""
     try:
         value = input('Введите число: ')
         if value.isdecimal():
