@@ -10,9 +10,9 @@ def type_checker():
         else:
             a, b = value.split('.')
             if a == b:
-                return f'Число {float(value)} дробное.\nЛевая и правая части совпадают'
+                return f'Число {float(value)} дробное.\nЛевая и правая части совпадают.'
             else:
-                return f'Число {float(value)} дробное. \nЛевая и правая части не совпадают'
+                return f'Число {float(value)} дробное. \nЛевая и правая части не совпадают.'
     except:
         return 'Вы указали что-то непонятное, программа завершена'
 
