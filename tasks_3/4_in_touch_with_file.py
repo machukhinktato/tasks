@@ -14,7 +14,7 @@ def abrakadabra(data, name='default.txt'):
         sys.exit()
 
 
-def randomizer():
+def random_data_filler():
     numbers = [random.randint(0, 99) for _ in range(10)]
     letters = []
     for i in range(10):
@@ -32,4 +32,4 @@ def randomizer():
 
 
 if __name__ == '__main__':
-    randomizer()
+    random_data_filler()
