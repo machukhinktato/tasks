@@ -32,9 +32,26 @@ def random_data_filler():
         i += 1
     return 'objective is done'
 
+
 def data_controller(name='default.txt'):
-    pass
+    with open(name, 'r') as textfile:
+        data_to_fix = [row.rstrip() for row in textfile]
+        cutter = r'\W+|\d|\_'
+        new_data = []
+        for i in range(len(data_to_fix)):
+            new_data.append("".join(re.split(cutter, data_to_fix[i])))
+        for i in range(len(new_data)):
+            data_to_fix.clear()
+            data_to_fix.append(f"{new_data[i]} {new_data[i]}")
+            print(data_to_fix)
+
+    with open('your_fixed_file.txt', 'w', encoding='utf8') as fixedfile:
+        i = 0
+        while i < len(data_to_fix):
+            print(data_to_fix, file=fixedfile, end='\n')
+            i += 1
 
 
 if __name__ == '__main__':
-    random_data_filler()
+    # random_data_filler()
+    data_controller()
