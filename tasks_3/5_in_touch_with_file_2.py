@@ -41,8 +41,7 @@ def data_controller(name='default.txt'):
         for i in range(len(data_to_fix)):
             new_data.append("".join(re.split(cutter, data_to_fix[i])))
         data_to_fix.clear()
-        for i in range(len(new_data)):
-            data_to_fix.append(f"{new_data[i]} {new_data[i]}")
+        [data_to_fix.append(f"{new_data[i]} {new_data[i]}") for i in range(len(new_data))]
 
     with open('your_fixed_file.txt', 'w', encoding='utf8') as fixedfile:
         i = 0
@@ -50,6 +49,7 @@ def data_controller(name='default.txt'):
             print(data_to_fix[i], file=fixedfile, end='\n')
             i += 1
 
+    return 'done'
 
 if __name__ == '__main__':
-    data_controller()
+    print(data_controller())
