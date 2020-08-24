@@ -7,7 +7,7 @@ def abrakadabra(data, name='default.txt'):
         with open(name, 'x', encoding='utf8') as textfile:
             print('This is my practical work\n', data, file=textfile, end='\n')
     except:
-        print('file already exists and will be added')
+        print('file already exists and will be additionally filled')
         with open(name, 'a', encoding='utf8') as textfile:
             print(data, file=textfile, end='\n')
     finally:
@@ -23,7 +23,7 @@ def randomizer():
         [ascii_generator.append(chr(number_of_letter)) for number_of_letter in numbers_of_ascii]
         letters.append(''.join(ascii_generator))
     file_to_write = list(zip(numbers, letters))
-    string_to_write = [f'{str(value)}' for value in file_to_write]
+    string_to_write = [str(value) for value in file_to_write]
     i = 0
     while i < len(string_to_write):
         abrakadabra("'\n'".join(string_to_write))
