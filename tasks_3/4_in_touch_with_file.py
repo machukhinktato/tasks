@@ -24,9 +24,9 @@ def randomizer():
         letters.append(''.join(ascii_generator))
     file_to_write = list(zip(numbers, letters))
     string_to_write = [f'{str(value)}' for value in file_to_write]
-    print(string_to_write)
+    i = 0
     while i < len(string_to_write):
-        abrakadabra(''.join(string_to_write[i]))
+        abrakadabra("'\n'".join(string_to_write))
         i += 1
     return 'objective is done'
 
