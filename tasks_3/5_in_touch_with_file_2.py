@@ -43,7 +43,6 @@ def data_controller(name='default.txt'):
         for i in range(len(new_data)):
             data_to_fix.clear()
             data_to_fix.append(f"{new_data[i]} {new_data[i]}")
-            print(data_to_fix)
 
     with open('your_fixed_file.txt', 'w', encoding='utf8') as fixedfile:
         i = 0
