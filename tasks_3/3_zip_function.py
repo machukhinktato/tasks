@@ -34,9 +34,16 @@ def task_former():
             sys.exit()
 
 
+def get_dictionary(keys, values):
+    # alternative version
+    values.extend([None] * (len(keys) - len(values)))
+    return {key: value for (key, value) in zip(keys, values)}
+
+
 if __name__ == '__main__':
-    print(zip_function())
-    print(zip_function((1, 2, 3, 4, 5, 6, 7, 8), (1, 2, 2, 3, 4, 5)))
-    print(zip_function((1, 2, 3, 4, 5, 6), (1, 2, 2, 3, 4, 5)))
-    print(zip_function((1, 2, 3, 4), (1, 2, 2, 3, 4, 5)))
-    print(zip_function(('Маша', 'Миша', 'Едет', 'Крыша', 'Голова-то', 'Из Гашиша'), ('Нет', 'Свободы', 'В', 'Беларуси')))
+    # print(zip_function())
+    # print(zip_function((1, 2, 3, 4, 5, 6, 7, 8), (1, 2, 2, 3, 4, 5)))
+    print(get_dictionary([1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 2, 3, 4, 5]))
+    # print(zip_function((1, 2, 3, 4, 5, 6), (1, 2, 2, 3, 4, 5)))
+    # print(zip_function((1, 2, 3, 4), (1, 2, 2, 3, 4, 5)))
+    # print(zip_function(('Маша', 'Миша', 'Едет', 'Крыша', 'Голова-то', 'Из Гашиша'), ('Нет', 'Свободы', 'В', 'Беларуси')))
