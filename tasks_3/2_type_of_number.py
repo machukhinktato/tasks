@@ -18,5 +18,21 @@ def type_checker():
         return 'Вы указали что-то непонятное, программа завершена'
 
 
+def compare_parts(parameters):
+    try:
+        number = float(parameters)
+        if int(number) == number:
+            return f'{parameters} tseloe chislo'
+        print(f'chislo{parameters} drobnoe')
+        left,right = parameters.split('.')
+        if left == right:
+            return 'yes'
+        return 'no'
+    except:
+        ValueError
+        return 'not number'
+
+
 if __name__ == '__main__':
     print(type_checker())
+    # print(compare_parts(11))
