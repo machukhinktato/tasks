@@ -24,7 +24,7 @@ class Doctor(Person):
         return print('doctor action')
 
 
-"""decorator"""
+"""decorator with fucntions which takes args"""
 
 
 def timer(func):
