@@ -1,5 +1,9 @@
 from datetime import datetime
 
+
+"""how super() works"""
+
+
 class Person:
 
     def __init__(self, firstname, secondname):
@@ -20,20 +24,23 @@ class Doctor(Person):
         return print('doctor action')
 
 
+"""decorator"""
+
+
 def timer(func):
     def wrapper(*args, **kwargs):
         start = datetime.now()
         result = func(*args, **kwargs)
         print(datetime.now() - start)
         return result
+
     return wrapper
+
 
 @timer
 def matilda(name):
     result = name
     print(f'Hello world from {result}')
-
-
 
 
 if __name__ == '__main__':
